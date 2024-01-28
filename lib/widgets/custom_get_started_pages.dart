@@ -22,7 +22,7 @@ class CustomGetStartedPages extends StatelessWidget {
           Text(
             title,
             style: TextStyle(
-                color: kBlackColor, fontSize: 32, fontWeight: FontWeight.w700),
+                color: kBlackColor, fontSize: 30, fontWeight: FontWeight.w700),
           ),
           SizedBox(
             height: 25,

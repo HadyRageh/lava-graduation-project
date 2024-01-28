@@ -5,14 +5,14 @@ import 'package:lava/widgets/custom_botton.dart';
 import 'package:lava/widgets/custom_other_signOut.dart';
 import 'package:lava/widgets/custom_textfield.dart';
 
-class MyWidget extends StatefulWidget {
-  const MyWidget({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
-  State<MyWidget> createState() => _MyWidgetState();
+  State<RegisterPage> createState() => _MyWidgetState();
 }
 
-class _MyWidgetState extends State<MyWidget> {
+class _MyWidgetState extends State<RegisterPage> {
   bool isVisable = true;
 
   @override
