@@ -2,8 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:lava/constatnt.dart';
-import 'package:lava/views/register_page.dart';
+import 'package:lava/views/signUp.dart';
 import 'package:lava/widgets/custom_botton.dart';
+import 'package:lava/widgets/custom_other_signOut.dart';
 import 'package:lava/widgets/custom_textfield.dart';
 
 class SignInPage extends StatefulWidget {
@@ -109,56 +110,7 @@ class _SignInPageState extends State<SignInPage> {
                 buttomName: 'Sign In',
                 onTap: () {},
               ),
-              SizedBox(
-                height: 50,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: 1.3,
-                    width: 70,
-                    decoration: BoxDecoration(
-                      color: Colors.grey,
-                    ),
-                  ),
-                  Text('     Or Sign In With     '),
-                  Container(
-                    height: 1.3,
-                    width: 70,
-                    decoration: BoxDecoration(
-                      color: Colors.grey,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                    onTap: () {},
-                    child: Image.asset(
-                      'assets/images/logo google.jpeg',
-                      width: 60,
-                      height: 60,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Image.asset(
-                      'assets/images/logo facebook.jpeg',
-                      width: 50,
-                      height: 50,
-                    ),
-                  ),
-                ],
-              ),
+              OtherSignInOut(),
             ],
           ),
         ),

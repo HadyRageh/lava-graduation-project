@@ -2,10 +2,18 @@
 
 import 'package:flutter/material.dart';
 import 'package:lava/widgets/custom_botton.dart';
+import 'package:lava/widgets/custom_other_signOut.dart';
 import 'package:lava/widgets/custom_textfield.dart';
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+class MyWidget extends StatefulWidget {
+  const MyWidget({super.key});
+
+  @override
+  State<MyWidget> createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> {
+  bool isVisable = true;
 
   @override
   Widget build(BuildContext context) {
@@ -20,46 +28,56 @@ class SignUpPage extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                'Sign Up',
+                'Complete!',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
               ),
               SizedBox(
                 height: 40,
               ),
               CustomTextField(
-                labelText: 'First Name',
-                inputType: TextInputType.text,
+                labelText: 'E-Mail',
+                inputType: TextInputType.emailAddress,
               ),
               SizedBox(
                 height: 30,
               ),
               CustomTextField(
-                labelText: 'Last Name',
-                inputType: TextInputType.text,
-              ),
+                  labelText: 'Password',
+                  inputType: TextInputType.text,
+                  obscureText: isVisable ? true : false,
+                  suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          isVisable = !isVisable;
+                        });
+                      },
+                      icon: isVisable
+                          ? Icon(Icons.visibility_off)
+                          : Icon(Icons.visibility))),
               SizedBox(
                 height: 30,
               ),
               CustomTextField(
-                labelText: 'Phone Number',
-                inputType: TextInputType.number,
-                prefixWidget: Row(
-                  children: [
-                    Image.asset('assets/images/twemoji_flag-egypt.png'),
-                    SizedBox(
-                      width: 3,
-                    ),
-                    Text('(+20)')
-                  ],
-                ),
-              ),
+                  labelText: 'Confirm Password',
+                  inputType: TextInputType.text,
+                  obscureText: isVisable ? true : false,
+                  suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          isVisable = !isVisable;
+                        });
+                      },
+                      icon: isVisable
+                          ? Icon(Icons.visibility_off)
+                          : Icon(Icons.visibility))),
               SizedBox(
                 height: 100,
               ),
               CustomButton(
-                buttomName: 'Continue',
+                buttomName: 'Sign Up',
                 onTap: () {},
-              )
+              ),
+              OtherSignInOut(),
             ],
           ),
         ),
