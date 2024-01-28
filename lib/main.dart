@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lava/views/get_started_page.dart';
+import 'package:lava/views/home_page.dart';
 import 'package:lava/views/register_page.dart';
 import 'package:lava/views/verivication_code_page.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Poppins',
         useMaterial3: true,
       ),
-      home: VerificationCodePage(),
+      home: HomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
