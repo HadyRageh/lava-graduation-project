@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Poppins',
         useMaterial3: true,
       ),
-      home: HomePage(),
+      home: VerificationCodePage(),
       debugShowCheckedModeBanner: false,
     );
   }
