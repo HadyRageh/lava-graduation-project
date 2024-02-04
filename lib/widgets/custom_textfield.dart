@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:lava/constatnt.dart';
 
 class CustomTextField extends StatelessWidget {
   CustomTextField(
@@ -9,10 +10,12 @@ class CustomTextField extends StatelessWidget {
       this.onChanged,
       this.suffixIcon,
       this.prefixWidget,
+      this.hintText,
       this.obscureText = false});
   Function(String)? onChanged;
 
   String? labelText;
+  String? hintText;
 
   TextInputType? inputType;
   bool? obscureText;
@@ -28,6 +31,8 @@ class CustomTextField extends StatelessWidget {
         isDense: true,
         suffixIcon: suffixIcon,
 
+        hintText: hintText,
+        hintStyle: TextStyle(color: kGreyColor, fontSize: 14),
         prefix: prefixWidget,
         labelText: labelText,
         labelStyle: TextStyle(

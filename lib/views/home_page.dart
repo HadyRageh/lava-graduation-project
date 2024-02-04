@@ -6,6 +6,7 @@ import 'package:lava/constatnt.dart';
 import 'package:lava/views/booking_page.dart';
 import 'package:lava/views/cart_page.dart';
 import 'package:lava/views/chat_page.dart';
+import 'package:lava/views/empty_cart_page.dart';
 import 'package:lava/views/home.dart';
 import 'package:lava/widgets/search_texr_field.dart';
 
@@ -23,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     Home(),
     BookingPage(),
     ChatPage(),
-    CartPage(),
+    EmptyCartPage(),
   ];
 
   _changeTab(int index) {
@@ -35,18 +36,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Image.asset('assets/images/Mask group.png'),
-        title: SearchTextField(),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.notifications_none_sharp,
-                size: 30,
-              ))
-        ],
-      ),
       body: _pages[_selectedTab],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedTab,
@@ -65,13 +54,13 @@ class _HomePageState extends State<HomePage> {
             //backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.rocketchat),
+            icon: Icon(FontAwesomeIcons.comments),
             label: "Chat",
             // backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart_outlined),
-            label: "Carts",
+            label: "Cart",
             // backgroundColor: Colors.black,
           ),
         ],

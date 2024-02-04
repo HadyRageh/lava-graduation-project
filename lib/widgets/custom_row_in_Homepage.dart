@@ -10,29 +10,26 @@ class CustomRowInHomePage extends StatelessWidget {
   Function() onPressed;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 15),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            titleName,
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.w700,
-            ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          titleName,
+          style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.w700,
           ),
-          TextButton(
-              onPressed: onPressed,
-              child: Text(
-                'See More',
-                style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: kPrimaryColor),
-              ))
-        ],
-      ),
+        ),
+        TextButton(
+            onPressed: onPressed,
+            child: Text(
+              'See More',
+              style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: kPrimaryColor),
+            ))
+      ],
     );
   }
 }
