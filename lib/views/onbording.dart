@@ -7,14 +7,14 @@ import 'package:lava/widgets/custom_skip&back_button.dart';
 
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class AboutLavaPage extends StatefulWidget {
-  const AboutLavaPage({super.key});
+class OnboardingPages extends StatefulWidget {
+  const OnboardingPages({super.key});
 
   @override
-  State<AboutLavaPage> createState() => _AboutLavaPageState();
+  State<OnboardingPages> createState() => _AboutLavaPageState();
 }
 
-class _AboutLavaPageState extends State<AboutLavaPage> {
+class _AboutLavaPageState extends State<OnboardingPages> {
   final PageController _controller = PageController(initialPage: 0);
 
   @override

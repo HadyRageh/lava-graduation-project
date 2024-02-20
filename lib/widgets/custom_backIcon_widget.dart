@@ -4,14 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:lava/constatnt.dart';
 
 class BackIcon extends StatelessWidget {
-  BackIcon({super.key, required this.onTap});
-  Function() onTap;
+  const BackIcon({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 8),
       child: GestureDetector(
-        onTap: onTap,
+        onTap: () {
+          Navigator.pop(context);
+        },
         child: Container(
           width: 15,
           height: 15,

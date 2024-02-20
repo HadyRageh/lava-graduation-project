@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:lava/constatnt.dart';
+import 'package:lava/widgets/custom_backIcon_widget.dart';
 import 'package:lava/widgets/custom_chat_Bubble.dart';
 import 'package:lava/widgets/custom_textfield.dart';
 
@@ -14,6 +15,7 @@ class ChatPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         scrolledUnderElevation: 0,
+        leading: BackIcon(),
         title: Text(
           'chat',
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),

@@ -5,9 +5,14 @@ import 'package:lava/constatnt.dart';
 
 class CustomRowInHomePage extends StatelessWidget {
   CustomRowInHomePage(
-      {super.key, required this.titleName, required this.onPressed});
+      {super.key,
+      required this.titleName,
+      this.onPressed,
+      this.textButtonName});
   String titleName;
-  Function() onPressed;
+  String? textButtonName;
+
+  Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -23,7 +28,7 @@ class CustomRowInHomePage extends StatelessWidget {
         TextButton(
             onPressed: onPressed,
             child: Text(
-              'See More',
+              textButtonName ?? '',
               style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w400,

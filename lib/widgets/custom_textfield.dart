@@ -11,6 +11,7 @@ class CustomTextField extends StatelessWidget {
       this.suffixIcon,
       this.prefixWidget,
       this.hintText,
+      this.controller,
       this.obscureText = false});
   Function(String)? onChanged;
 
@@ -21,12 +22,14 @@ class CustomTextField extends StatelessWidget {
   bool? obscureText;
   Widget? suffixIcon;
   Widget? prefixWidget;
+  TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return TextField(
       obscureText: obscureText!,
       onChanged: onChanged,
       keyboardType: inputType,
+      controller: controller,
       decoration: InputDecoration(
         isDense: true,
         suffixIcon: suffixIcon,

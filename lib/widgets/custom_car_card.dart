@@ -9,6 +9,9 @@ class CustomCarCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      //width: MediaQuery.of(context).size.width / 2,
+
+      // padding: EdgeInsets.all(8),
       width: 160,
       height: 200,
       decoration: BoxDecoration(
@@ -34,7 +37,8 @@ class CustomCarCard extends StatelessWidget {
           ),
           Expanded(
               child: Container(
-            color: kGreyColor.withOpacity(0.2),
+            // color: kWithOpsityGrey,
+            color: kGreyColor.withOpacity(0.1),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(

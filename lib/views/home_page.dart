@@ -1,69 +1,67 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_final_fields
+// ignore_for_file: unnecessary_new, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:lava/constatnt.dart';
-import 'package:lava/views/booking_page.dart';
-import 'package:lava/views/cart_page.dart';
 import 'package:lava/views/chat_page.dart';
 import 'package:lava/views/empty_cart_page.dart';
 import 'package:lava/views/home.dart';
-import 'package:lava/widgets/search_texr_field.dart';
+import 'package:lava/widgets/custom_nav_bar.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  int _selectedTab = 0;
-
-  List _pages = [
-    Home(),
-    BookingPage(),
-    ChatPage(),
-    EmptyCartPage(),
-  ];
-
-  _changeTab(int index) {
-    setState(() {
-      _selectedTab = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_selectedTab],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedTab,
-        onTap: (index) => _changeTab(index),
-        selectedItemColor: kPrimaryColor,
-        unselectedItemColor: kBlackColor,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
-            label: "Home",
-            //backgroundColor: Colors.black,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.local_car_wash_outlined),
-            label: "Booking",
-            //backgroundColor: Colors.black,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.comments),
-            label: "Chat",
-            // backgroundColor: Colors.black,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_outlined),
-            label: "Cart",
-            // backgroundColor: Colors.black,
-          ),
-        ],
+      body: Home(),
+      bottomNavigationBar: BottomAppBar(
+        color: kWithOpsityGrey,
+        surfaceTintColor: kWithOpsityGrey,
+        height: 65,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Expanded(
+              child: CustomNavBar(
+                image: 'assets/images/icons8-home-48.png',
+                labelName: 'Home',
+                onTap: () {},
+              ),
+            ),
+            Expanded(
+              child: CustomNavBar(
+                image: 'lib/views/icons8-car-cleaning-50.png',
+                labelName: 'Booking',
+                onTap: () {},
+              ),
+            ),
+            Expanded(
+              child: CustomNavBar(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: ((context) {
+                    return ChatPage();
+                  })));
+                },
+                image: 'assets/images/icons8-chat-50 (1).png',
+                labelName: 'Chat',
+              ),
+            ),
+            Expanded(
+              child: CustomNavBar(
+                image: 'assets/images/icons8-cart-64.png',
+                labelName: 'Cart',
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: ((context) {
+                    return EmptyCartPage();
+                  })));
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

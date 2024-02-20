@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:lava/constatnt.dart';
+import 'package:lava/widgets/custom_backIcon_widget.dart';
 
 class EmptyCartPage extends StatelessWidget {
   const EmptyCartPage({super.key});
@@ -9,6 +9,14 @@ class EmptyCartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'cart',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+        ),
+        centerTitle: true,
+        leading: BackIcon(),
+      ),
       body: SizedBox(
         width: double.infinity,
         child: Column(

@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:lava/constatnt.dart';
-import 'package:lava/views/about_lava_page.dart';
+import 'package:lava/views/onbording.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -49,7 +49,7 @@ class WelcomePage extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AboutLavaPage()),
+                MaterialPageRoute(builder: (context) => OnboardingPages()),
               );
             },
             child: Container(

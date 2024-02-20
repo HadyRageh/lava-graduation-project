@@ -1,13 +1,252 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: prefer_final_fields, unused_field, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-class BookingPage extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:lava/constatnt.dart';
+import 'package:lava/views/payment_datails_page.dart';
+import 'package:lava/widgets/custom_backIcon_widget.dart';
+
+import 'package:lava/widgets/custom_textfield.dart';
+import 'package:table_calendar/table_calendar.dart';
+
+class BookingPage extends StatefulWidget {
   const BookingPage({super.key});
+
+  @override
+  State<BookingPage> createState() => _SchedulePageState();
+}
+
+class _SchedulePageState extends State<BookingPage> {
+  CalendarFormat _format = CalendarFormat.month;
+  DateTime _focusDay = DateTime.now();
+  DateTime _currentDay = DateTime.now();
+  int? _currentIndex;
+  bool _isWeekend = false;
+  bool _dateSelected = false;
+  bool _timeSelected = false;
+  bool _isButtonActive = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('hello !!!!!'),
+      appBar: AppBar(
+        scrolledUnderElevation: 0,
+        title: Text(
+          'Booking',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        centerTitle: true,
+        leading: BackIcon(),
+      ),
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Select a day',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                  ),
+                  //display tabel calender here..
+                  Container(color: kWithOpsityGrey, child: _tableCalendar()),
+
+                  Padding(
+                    padding: const EdgeInsets.only(top: 15),
+                    child: Text(
+                      'Choose a stating time',
+                      style:
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          _isWeekend
+              ? SliverToBoxAdapter(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 30),
+                    alignment: Alignment.center,
+                    child: Text(
+                      'weekend is not avaliable, please select another date',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: kGreyColor,
+                      ),
+                    ),
+                  ),
+                )
+              : SliverGrid(
+                  delegate: SliverChildBuilderDelegate(
+                    (context, index) {
+                      return InkWell(
+                        splashColor: Colors.transparent,
+                        onTap: () {
+                          setState(() {
+                            _currentIndex = index;
+                            _timeSelected = true;
+                          });
+                        },
+                        child: Container(
+                          margin: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: _currentIndex == index
+                                ? kPrimaryColor
+                                : kWithOpsityGrey,
+                          ),
+                          alignment: Alignment.center,
+                          child: Text(
+                            '${index + 9}:00 ${index + 9 > 11 ? 'Pm' : 'Am'}',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color:
+                                  _currentIndex == index ? Colors.white : null,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                    childCount: 8,
+                  ),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 4, childAspectRatio: 1.5),
+                ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Place',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  CustomTextField(
+                    hintText: 'Place Of Order',
+                    //controller: _placeController,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: Color(0xffEEEEEE),
+        surfaceTintColor: Color(0xffEEEEEE),
+        height: 70,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Text(
+                  ' 50',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                ),
+                Text(
+                  'L.E',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+                ),
+              ],
+            ),
+            Button(
+              title: 'Booking',
+              disable: _timeSelected && _dateSelected
+                  //&&_placeController.text.isNotEmpty
+                  ? false
+                  : true,
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) {
+                  return PaymentDetailsPage();
+                })));
+              },
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  //table Calender
+  Widget _tableCalendar() {
+    return TableCalendar(
+      focusedDay: _focusDay,
+      firstDay: DateTime.now(),
+      lastDay: DateTime.utc(2030, 3, 14),
+      calendarFormat: _format,
+      currentDay: _currentDay,
+      rowHeight: 48,
+      calendarStyle: const CalendarStyle(
+        todayDecoration:
+            BoxDecoration(color: kPrimaryColor, shape: BoxShape.circle),
+      ),
+      availableCalendarFormats: const {
+        CalendarFormat.month: 'Month',
+      },
+      onFormatChanged: (format) {
+        setState(() {
+          _format = format;
+        });
+      },
+      onDaySelected: ((selectedDay, focusedDay) {
+        setState(() {
+          _currentDay = selectedDay;
+          _focusDay = focusedDay;
+          _dateSelected = true;
+
+          //check if weekend is selected
+          if (selectedDay.weekday == 6 || selectedDay.weekday == 7) {
+            _isWeekend = true;
+            _timeSelected = false;
+            _currentIndex = null;
+          } else {
+            _isWeekend = false;
+          }
+        });
+      }),
+    );
+  }
+}
+
+class Button extends StatelessWidget {
+  const Button(
+      {super.key,
+      required this.title,
+      required this.onPressed,
+      required this.disable});
+  final String title;
+  final bool disable; //this is used to disable button
+  final Function() onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: disable ? null : onPressed,
+      child: Container(
+        width: 200,
+        height: 50,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: disable ? kGreyColor : kPrimaryColor,
+        ),
+        child: Center(
+          child: Text(
+            title,
+            style: TextStyle(
+                fontSize: 20, fontWeight: FontWeight.w600, color: Colors.white),
+          ),
+        ),
       ),
     );
   }

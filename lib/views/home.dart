@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_final_fields
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_final_fields, unused_field, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -8,7 +8,7 @@ import 'package:lava/widgets/custom_accessories_card.dart';
 import 'package:lava/widgets/custom_car_card.dart';
 
 import 'package:lava/widgets/custom_row_in_Homepage.dart';
-import 'package:lava/widgets/offer_card.dart';
+
 import 'package:lava/widgets/search_texr_field.dart';
 
 class Home extends StatelessWidget {
@@ -32,7 +32,11 @@ class Home extends StatelessWidget {
           Stack(
             children: [
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    //     Navigator.push(context, MaterialPageRoute(builder: ((context) {
+                    //   return ();
+                    // })));
+                  },
                   icon: Icon(
                     FontAwesomeIcons.bell,
                     size: 25,
@@ -59,7 +63,10 @@ class Home extends StatelessWidget {
           child: Column(
             children: [
               CustomRowInHomePage(
-                  titleName: 'Special For You', onPressed: () {}),
+                titleName: 'Special For You',
+                onPressed: () {},
+                textButtonName: 'See More',
+              ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -90,12 +97,18 @@ class Home extends StatelessWidget {
               SizedBox(
                 height: 5,
               ),
-              CustomRowInHomePage(titleName: 'Services', onPressed: () {}),
+              CustomRowInHomePage(
+                titleName: 'Services',
+              ),
               Image.asset('assets/images/SERVIES.png'),
               SizedBox(
                 height: 5,
               ),
-              CustomRowInHomePage(titleName: 'Cars', onPressed: () {}),
+              CustomRowInHomePage(
+                titleName: 'Cars',
+                onPressed: () {},
+                textButtonName: 'See More',
+              ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Container(
@@ -122,7 +135,11 @@ class Home extends StatelessWidget {
               SizedBox(
                 height: 5,
               ),
-              CustomRowInHomePage(titleName: 'Accessories', onPressed: () {}),
+              CustomRowInHomePage(
+                titleName: 'Accessories',
+                textButtonName: 'See More',
+                onPressed: () {},
+              ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Container(

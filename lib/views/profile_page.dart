@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:lava/constatnt.dart';
 import 'package:lava/views/my_booking_page.dart';
 import 'package:lava/views/personal_info_page.dart';
-import 'package:lava/widgets/custom_backIcon_widget.dart';
+
 import 'package:lava/widgets/custom_circle_avatar.dart';
 import 'package:lava/widgets/custom_listTile_profile.dart';
 
@@ -20,9 +20,22 @@ class ProfilePage extends StatelessWidget {
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
-        leading: BackIcon(onTap: () {
-          Navigator.pop(context);
-        }),
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.of(context).pop();
+          },
+          child: Container(
+            width: 45,
+            height: 45,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              color: kWhiteColor,
+            ),
+            child: Center(
+              child: Icon(Icons.arrow_back),
+            ),
+          ),
+        ),
       ),
       body: SizedBox(
         width: double.infinity,

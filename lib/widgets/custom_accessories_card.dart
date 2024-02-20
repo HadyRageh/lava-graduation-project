@@ -9,7 +9,8 @@ class CustomAccessoriesCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 160,
+      width: MediaQuery.of(context).size.width / 2,
+      // width: 160,
       height: 200,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
@@ -36,7 +37,8 @@ class CustomAccessoriesCard extends StatelessWidget {
           Expanded(
               flex: 1,
               child: Container(
-                color: kGreyColor.withOpacity(0.2),
+                color: kGreyColor.withOpacity(0.1),
+                //color: kWithOpsityGrey,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(

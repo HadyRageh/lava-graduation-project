@@ -18,9 +18,7 @@ class PersonalIngoPage extends StatelessWidget {
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
-        leading: BackIcon(onTap: () {
-          Navigator.pop(context);
-        }),
+        leading: BackIcon(),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

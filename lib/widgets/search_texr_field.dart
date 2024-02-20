@@ -10,7 +10,7 @@ class SearchTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
-        fillColor: Color(0xffF8F8F8),
+        fillColor: kWithOpsityGrey,
         filled: true,
         prefixIcon: Icon(
           Icons.search,
