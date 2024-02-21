@@ -12,6 +12,8 @@ import 'package:lava/views/profile_page.dart';
 import 'package:lava/views/booking_page.dart';
 import 'package:lava/views/register_page.dart';
 import 'package:lava/views/store_page.dart';
+import 'package:lava/views/successful_order_page.dart';
+import 'package:lava/views/tracking_order_page.dart';
 import 'package:lava/views/verivication_code_page.dart';
 
 void main() {
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Poppins',
         useMaterial3: true,
       ),
-      home: PaymentDetailsPage(),
+      home: TrackingOrderPage(),
       debugShowCheckedModeBanner: false,
     );
   }

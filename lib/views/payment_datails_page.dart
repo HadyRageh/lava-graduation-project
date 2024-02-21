@@ -137,14 +137,7 @@ class _PaymentDetailsPage extends State<PaymentDetailsPage> {
                 ),
               ],
             ),
-            CustomButtonDetails(
-              buttomName: 'Back To Home',
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: ((context) {
-                  return HomePage();
-                })));
-              },
-            ),
+            CustomButtonDetails(),
           ],
         ),
       ),
@@ -193,14 +186,18 @@ class CustomRow extends StatelessWidget {
 }
 
 class CustomButtonDetails extends StatelessWidget {
-  CustomButtonDetails({super.key, required this.buttomName, this.onTap});
-  String buttomName;
-  Function()? onTap;
+  const CustomButtonDetails({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: ((context) {
+          return HomePage();
+        })));
+      },
       child: Container(
         width: double.infinity,
         height: 60,
@@ -212,19 +209,19 @@ class CustomButtonDetails extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              buttomName,
+              'Back To Home',
               style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
                   color: Colors.white),
             ),
             SizedBox(
-              width: 15,
+              width: 10,
             ),
             Image.asset(
-              'assets/images/icons8-reply-arrow-64.png',
-              width: 30,
-              height: 30,
+              'assets/images/icons8-reply-arrow-32.png',
+              width: 40,
+              height: 40,
             ),
           ],
         ),
