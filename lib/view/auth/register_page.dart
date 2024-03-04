@@ -1,8 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lava/constatnt.dart';
+import 'package:lava/view/widget/custom_text.dart';
+import 'package:lava/view/home/home_page.dart';
 import 'package:lava/widgets/custom_botton.dart';
-import 'package:lava/widgets/custom_other_signOut.dart';
+import 'package:lava/widgets/custom_Botton_social_medial.dart';
 import 'package:lava/widgets/custom_textfield.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -27,9 +31,10 @@ class _MyWidgetState extends State<RegisterPage> {
               SizedBox(
                 height: 20,
               ),
-              Text(
-                'Complete!',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+              CustomText(
+                text: 'Complete!',
+                fontSize: 24,
+                fontWeight: FontWeight.w700,
               ),
               SizedBox(
                 height: 40,
@@ -53,7 +58,10 @@ class _MyWidgetState extends State<RegisterPage> {
                       },
                       icon: isVisable
                           ? Icon(Icons.visibility_off)
-                          : Icon(Icons.visibility))),
+                          : Icon(
+                              Icons.visibility,
+                              color: kPrimaryColor,
+                            ))),
               SizedBox(
                 height: 30,
               ),
@@ -69,15 +77,20 @@ class _MyWidgetState extends State<RegisterPage> {
                       },
                       icon: isVisable
                           ? Icon(Icons.visibility_off)
-                          : Icon(Icons.visibility))),
+                          : Icon(
+                              Icons.visibility,
+                              color: kPrimaryColor,
+                            ))),
               SizedBox(
                 height: 100,
               ),
               CustomButton(
                 buttomName: 'Sign Up',
-                onTap: () {},
+                onTap: () {
+                  Get.to(() => HomePage());
+                },
               ),
-              OtherSignInOut(),
+              CustomBottonSocialMedia(),
             ],
           ),
         ),

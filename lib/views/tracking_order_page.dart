@@ -1,9 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable
-
 import 'package:lava/constatnt.dart';
-import 'package:lava/views/payment_datails_page.dart';
+import 'package:lava/view/home/payment_datails_page.dart';
 import 'package:timeline_tile/timeline_tile.dart';
-
 import 'package:flutter/material.dart';
 import 'package:lava/widgets/custom_backIcon_widget.dart';
 
@@ -51,28 +49,28 @@ class TrackingOrderPage extends StatelessWidget {
                   height: 15,
                 ),
                 CostomRowDetails(
-                  title: 'Name:',
+                  title: 'Name: ',
                   tilteValue: 'Abdelrahman Osama',
                 ),
                 SizedBox(
                   height: 10,
                 ),
                 CostomRowDetails(
-                  title: 'Phone Number :',
+                  title: 'Phone Number : ',
                   tilteValue: '+201123456789',
                 ),
                 SizedBox(
                   height: 10,
                 ),
                 CostomRowDetails(
-                  title: 'City :',
+                  title: 'City : ',
                   tilteValue: 'Tanta',
                 ),
                 SizedBox(
                   height: 10,
                 ),
                 CostomRowDetails(
-                  title: 'Address :',
+                  title: 'Address : ',
                   tilteValue: 'elbaher street',
                 ),
               ],

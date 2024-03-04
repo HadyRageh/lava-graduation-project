@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:lava/constatnt.dart';
-import 'package:lava/views/payment_datails_page.dart';
 import 'package:lava/views/tracking_order_page.dart';
 import 'package:lava/widgets/custom_backIcon_widget.dart';
 import 'package:lava/widgets/custom_botton.dart';

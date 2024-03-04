@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lava/constatnt.dart';
 
 class BackIcon extends StatelessWidget {
@@ -12,11 +13,11 @@ class BackIcon extends StatelessWidget {
       padding: const EdgeInsets.only(left: 8),
       child: GestureDetector(
         onTap: () {
-          Navigator.pop(context);
+          Get.back();
         },
         child: Container(
           width: 15,
-          height: 15,
+          height: 10,
           decoration: BoxDecoration(
             color: kWithOpsityGrey,
             borderRadius: BorderRadius.circular(10),

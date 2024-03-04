@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lava/view/auth/verivication_code_page.dart';
 import 'package:lava/widgets/custom_botton.dart';
 import 'package:lava/widgets/custom_textfield.dart';
 
@@ -58,7 +60,9 @@ class SignUpPage extends StatelessWidget {
               ),
               CustomButton(
                 buttomName: 'Continue',
-                onTap: () {},
+                onTap: () {
+                  Get.to(() => VerificationCodePage());
+                },
               )
             ],
           ),

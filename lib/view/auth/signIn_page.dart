@@ -1,10 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lava/constatnt.dart';
-import 'package:lava/views/signUp.dart';
+import 'package:lava/view/auth/signUp.dart';
+import 'package:lava/view/widget/custom_text.dart';
 import 'package:lava/widgets/custom_botton.dart';
-import 'package:lava/widgets/custom_other_signOut.dart';
+import 'package:lava/widgets/custom_Botton_social_medial.dart';
 import 'package:lava/widgets/custom_textfield.dart';
 
 class SignInPage extends StatefulWidget {
@@ -29,9 +31,10 @@ class _SignInPageState extends State<SignInPage> {
               SizedBox(
                 height: 20,
               ),
-              Text(
-                'Sign In',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+              CustomText(
+                text: 'Sign In',
+                fontSize: 24,
+                fontWeight: FontWeight.w700,
               ),
               SizedBox(
                 height: 40,
@@ -54,8 +57,13 @@ class _SignInPageState extends State<SignInPage> {
                         });
                       },
                       icon: isVisable
-                          ? Icon(Icons.visibility_off)
-                          : Icon(Icons.visibility))),
+                          ? Icon(
+                              Icons.visibility_off,
+                            )
+                          : Icon(
+                              Icons.visibility,
+                              color: kPrimaryColor,
+                            ))),
               SizedBox(
                 height: 10,
               ),
@@ -80,26 +88,17 @@ class _SignInPageState extends State<SignInPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Don\'t have an account ?',
-                    style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        color: kBlackColor),
+                  CustomText(
+                    text: 'Don\'t have an account ?',
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
                   ),
                   TextButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => SignUpPage()),
-                        );
+                        Get.to(() => SignUpPage());
                       },
-                      child: Text(
-                        'Sign up',
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            color: kBlackColor),
+                      child: CustomText(
+                        text: 'Sign up',
                       )),
                 ],
               ),
@@ -110,7 +109,7 @@ class _SignInPageState extends State<SignInPage> {
                 buttomName: 'Sign In',
                 onTap: () {},
               ),
-              OtherSignInOut(),
+              CustomBottonSocialMedia(),
             ],
           ),
         ),

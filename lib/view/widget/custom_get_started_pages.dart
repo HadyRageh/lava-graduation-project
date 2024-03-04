@@ -25,7 +25,7 @@ class CustomGetStartedPages extends StatelessWidget {
                 color: kBlackColor, fontSize: 30, fontWeight: FontWeight.w700),
           ),
           SizedBox(
-            height: 25,
+            height: 50,
           ),
           Image.asset(imageUrl),
           SizedBox(

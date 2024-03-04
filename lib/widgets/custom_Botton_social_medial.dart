@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class OtherSignInOut extends StatelessWidget {
-  const OtherSignInOut({super.key});
+class CustomBottonSocialMedia extends StatelessWidget {
+  const CustomBottonSocialMedia({super.key});
 
   @override
   Widget build(BuildContext context) {

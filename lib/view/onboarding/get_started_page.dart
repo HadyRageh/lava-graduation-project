@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:lava/constatnt.dart';
-import 'package:lava/views/onbording.dart';
+import 'package:lava/view/onboarding/onbording.dart';
+import 'package:lava/view/widget/custom_text.dart';
+import 'package:get/get.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -13,33 +15,24 @@ class WelcomePage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(
-            height: 50,
+          Spacer(
+            flex: 3,
           ),
           Image.asset('assets/images/logo1-removebg-preview 1.png'),
-          SizedBox(
-            height: 180,
-          ),
+          Spacer(flex: 3),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                'Fast',
-                style: TextStyle(
-                    color: kBlackColor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500),
+              CustomText(
+                text: 'Fast',
               ),
               SizedBox(
                 width: 2,
               ),
-              Text(
-                'Car Wash',
-                style: TextStyle(
-                    color: Color(0xff004269),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700),
-              ),
+              CustomText(
+                  text: 'Car Wash',
+                  color: Color(0xff004269),
+                  fontWeight: FontWeight.w700),
             ],
           ),
           SizedBox(
@@ -47,10 +40,7 @@ class WelcomePage extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => OnboardingPages()),
-              );
+              Get.to(() => OnboardingPages());
             },
             child: Container(
               width: 240,
@@ -79,6 +69,7 @@ class WelcomePage extends StatelessWidget {
               )),
             ),
           ),
+          Spacer(),
         ],
       ),
     );

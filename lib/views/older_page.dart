@@ -7,7 +7,8 @@ import 'package:lava/views/car_wash.dart';
 
 import 'package:lava/views/chat_page.dart';
 import 'package:lava/views/empty_cart_page.dart';
-import 'package:lava/views/home.dart';
+
+import 'package:lava/view/home/home_page.dart';
 
 class OlderPage extends StatefulWidget {
   const OlderPage({super.key});
@@ -21,8 +22,8 @@ class _HomePageState extends State<OlderPage> {
   int currentIndex = 0;
 
   List<Widget> pages = [
-    Home(),
-    CarWashPage(),
+    HomePage(),
+    CarWashScreen(),
     ChatPage(),
     EmptyCartPage(),
   ];

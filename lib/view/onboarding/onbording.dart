@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:lava/views/signIn_page.dart';
-import 'package:lava/widgets/custom_get_started_pages.dart';
+import 'package:get/get.dart';
+import 'package:lava/view/auth/signIn_page.dart';
+import 'package:lava/view/widget/custom_get_started_pages.dart';
 import 'package:lava/widgets/custom_skip&back_button.dart';
 
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -40,7 +41,7 @@ class _AboutLavaPageState extends State<OnboardingPages> {
             ),
             Center(
               child: SizedBox(
-                height: 550,
+                height: 570,
                 child: PageView(
                   controller: _controller,
                   children: [
@@ -83,15 +84,12 @@ class _AboutLavaPageState extends State<OnboardingPages> {
                 CustomSkipAndBackButtom(
                     icon: Icons.arrow_back_ios_new_rounded,
                     onTap: () {
-                      Navigator.pop(context, true);
+                      Get.back();
                     }),
                 CustomSkipAndBackButtom(
                     icon: Icons.arrow_forward_ios_rounded,
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignInPage()),
-                      );
+                      Get.to(() => SignInPage());
                     }),
               ],
             ),

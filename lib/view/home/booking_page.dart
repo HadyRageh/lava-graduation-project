@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_final_fields, unused_field, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lava/constatnt.dart';
-import 'package:lava/views/payment_datails_page.dart';
+import 'package:lava/view/widget/custom_text.dart';
+import 'package:lava/view/home/payment_datails_page.dart';
 import 'package:lava/widgets/custom_backIcon_widget.dart';
 
 import 'package:lava/widgets/custom_textfield.dart';
@@ -24,6 +26,13 @@ class _SchedulePageState extends State<BookingPage> {
   bool _dateSelected = false;
   bool _timeSelected = false;
   bool _isButtonActive = true;
+  TextEditingController _placeController = TextEditingController();
+  @override
+  void dispose() {
+    // Dispose the controller when the widget is disposed
+    _placeController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,19 +57,19 @@ class _SchedulePageState extends State<BookingPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Select a day',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                  CustomText(
+                    text: 'Select a day',
+                    fontSize: 24,
                   ),
+
                   //display tabel calender here..
                   Container(color: kWithOpsityGrey, child: _tableCalendar()),
 
                   Padding(
                     padding: const EdgeInsets.only(top: 15),
-                    child: Text(
-                      'Choose a stating time',
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                    child: CustomText(
+                      text: 'Choose a stating time',
+                      fontSize: 24,
                     ),
                   ),
                 ],
@@ -72,13 +81,12 @@ class _SchedulePageState extends State<BookingPage> {
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 30),
                     alignment: Alignment.center,
-                    child: Text(
-                      'weekend is not avaliable, please select another date',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: kGreyColor,
-                      ),
+                    child: CustomText(
+                      text:
+                          'weekend is not avaliable, please select another date',
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: kGreyColor,
                     ),
                   ),
                 )
@@ -133,7 +141,10 @@ class _SchedulePageState extends State<BookingPage> {
                   ),
                   CustomTextField(
                     hintText: 'Place Of Order',
-                    //controller: _placeController,
+                    controller: _placeController,
+                    onChanged: (value) {
+                      setState(() {});
+                    },
                   ),
                 ],
               ),
@@ -162,14 +173,13 @@ class _SchedulePageState extends State<BookingPage> {
             ),
             Button(
               title: 'Booking',
-              disable: _timeSelected && _dateSelected
-                  //&&_placeController.text.isNotEmpty
+              disable: _timeSelected &&
+                      _dateSelected &&
+                      (_placeController.text.isNotEmpty)
                   ? false
                   : true,
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: ((context) {
-                  return PaymentDetailsPage();
-                })));
+                Get.to(PaymentDetailsPage());
               },
             )
           ],

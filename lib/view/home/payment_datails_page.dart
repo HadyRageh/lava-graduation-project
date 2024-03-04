@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:lava/constatnt.dart';
-import 'package:lava/views/home_page.dart';
+import 'package:lava/view/home/home_page.dart';
+import 'package:lava/view/widget/custom_text.dart';
 import 'package:lava/widgets/custom_backIcon_widget.dart';
 
 import 'package:lottie/lottie.dart';
@@ -20,12 +21,9 @@ class _PaymentDetailsPage extends State<PaymentDetailsPage> {
     return Scaffold(
       appBar: AppBar(
         scrolledUnderElevation: 0,
-        title: Text(
-          'Payment Details',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.w500,
-          ),
+        title: CustomText(
+          text: 'Payment Details',
+          fontSize: 24,
         ),
         centerTitle: true,
         leading: BackIcon(),
@@ -42,7 +40,7 @@ class _PaymentDetailsPage extends State<PaymentDetailsPage> {
               children: [
                 Container(
                   width: double.infinity,
-                  height: 490,
+                  // height: 490,
                   decoration: BoxDecoration(
                     color: kWithOpsityGrey,
                     borderRadius: BorderRadius.circular(10),
@@ -55,74 +53,76 @@ class _PaymentDetailsPage extends State<PaymentDetailsPage> {
                       ),
                     ],
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Payment Total',
-                        style: TextStyle(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 20),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        CustomText(
+                          text: 'Payment Total',
+                          alignment: Alignment.center,
                           fontSize: 20,
                           color: kGreyColor,
                           fontWeight: FontWeight.w300,
                         ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            '62',
-                            style: TextStyle(
-                                fontSize: 36, fontWeight: FontWeight.w700),
-                          ),
-                          Text(
-                            'L.E',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w300),
-                          ),
-                        ],
-                      ),
-                      CustomRow(
-                        title: 'Date',
-                        result1: 'Jan 01,2024 |',
-                        result2: '08:00 AM',
-                      ),
-                      CustomRow(
-                        title: 'Details',
-                        result1: 'Dry Clean',
-                      ),
-                      CustomRow(
-                        title: 'Service Duration',
-                        result1: '1.5 H',
-                      ),
-                      Container(
-                        width: 290,
-                        height: 1,
-                        color: kGreyColor,
-                      ),
-                      CustomRow(
-                        title: 'Total Payment',
-                        result1: '50.00',
-                        result2: 'L.E',
-                      ),
-                      CustomRow(
-                        title: 'Tax',
-                        result1: '12.00',
-                        result2: 'L.E',
-                      ),
-                      CustomRow(
-                        title: 'Total',
-                        result1: '62.00',
-                        result2: 'L.E',
-                      ),
-                      CustomRow(
-                        title: 'Payment Methods',
-                        result1: 'Cash',
-                      ),
-                    ],
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CustomText(
+                              text: '62',
+                              fontSize: 36,
+                              fontWeight: FontWeight.w700,
+                            ),
+                            CustomText(
+                              text: 'L.E',
+                              fontSize: 20,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ],
+                        ),
+                        CustomRow(
+                          title: 'Date',
+                          result1: 'Jan 01,2024 |',
+                          result2: '08:00 AM',
+                        ),
+                        CustomRow(
+                          title: 'Details',
+                          result1: 'Dry Clean',
+                        ),
+                        CustomRow(
+                          title: 'Service Duration',
+                          result1: '1.5 H',
+                        ),
+                        Container(
+                          width: 290,
+                          height: 1,
+                          color: kGreyColor,
+                        ),
+                        CustomRow(
+                          title: 'Total Payment',
+                          result1: '50.00',
+                          result2: 'L.E',
+                        ),
+                        CustomRow(
+                          title: 'Tax',
+                          result1: '12.00',
+                          result2: 'L.E',
+                        ),
+                        CustomRow(
+                          title: 'Total',
+                          result1: '62.00',
+                          result2: 'L.E',
+                        ),
+                        CustomRow(
+                          title: 'Payment Methods',
+                          result1: 'Cash',
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Positioned(
@@ -169,13 +169,15 @@ class CustomRow extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                result1,
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+              CustomText(
+                text: result1,
+                fontSize: 12,
+                fontWeight: FontWeight.w400,
               ),
-              Text(
-                result2 ?? '',
-                style: TextStyle(fontSize: 10, fontWeight: FontWeight.w300),
+              CustomText(
+                text: result2 ?? '',
+                fontSize: 10,
+                fontWeight: FontWeight.w300,
               ),
             ],
           ),
@@ -208,12 +210,12 @@ class CustomButtonDetails extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'Back To Home',
-              style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white),
+            CustomText(
+              text: 'Back To Home',
+              alignment: Alignment.center,
+              fontSize: 20,
+              color: Colors.white,
+              fontWeight: FontWeight.w600,
             ),
             SizedBox(
               width: 10,
