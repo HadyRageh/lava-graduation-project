@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:lava/constatnt.dart';
-import 'package:lava/views/details_car_screen.dart';
+import 'package:lava/view/store/details_car_screen.dart';
 
-import 'package:lava/widgets/custom_botton.dart';
-import 'package:lava/widgets/read_more_and_less_widget.dart';
+import 'package:lava/view/widget/custom_botton.dart';
+import 'package:lava/view/widget/read_more_and_less_widget.dart';
 
 class DetailsAcessoriesScreen extends StatefulWidget {
   const DetailsAcessoriesScreen({super.key});

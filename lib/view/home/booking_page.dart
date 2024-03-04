@@ -5,9 +5,9 @@ import 'package:get/get.dart';
 import 'package:lava/constatnt.dart';
 import 'package:lava/view/widget/custom_text.dart';
 import 'package:lava/view/home/payment_datails_page.dart';
-import 'package:lava/widgets/custom_backIcon_widget.dart';
+import 'package:lava/view/widget/custom_backIcon_widget.dart';
 
-import 'package:lava/widgets/custom_textfield.dart';
+import 'package:lava/view/widget/custom_textfield.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class BookingPage extends StatefulWidget {

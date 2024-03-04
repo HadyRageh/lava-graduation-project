@@ -3,7 +3,7 @@ import 'package:lava/constatnt.dart';
 import 'package:lava/view/home/payment_datails_page.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:lava/widgets/custom_backIcon_widget.dart';
+import 'package:lava/view/widget/custom_backIcon_widget.dart';
 
 class TrackingOrderPage extends StatelessWidget {
   const TrackingOrderPage({super.key});

@@ -7,9 +7,9 @@ import 'package:lava/model/car_wach_items.dart';
 
 import 'package:lava/view/widget/custom_text.dart';
 import 'package:lava/view/home/about_car_wash.dart';
-import 'package:lava/views/search_screen.dart';
+import 'package:lava/view/home/search_screen.dart';
 
-import 'package:lava/widgets/search_texr_field.dart';
+import 'package:lava/view/widget/search_texr_field.dart';
 
 class CarWashScreen extends StatelessWidget {
   const CarWashScreen({super.key});

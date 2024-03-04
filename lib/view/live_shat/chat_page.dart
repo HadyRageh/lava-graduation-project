@@ -3,9 +3,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:lava/constatnt.dart';
-import 'package:lava/widgets/custom_backIcon_widget.dart';
-import 'package:lava/widgets/custom_chat_Bubble.dart';
-import 'package:lava/widgets/custom_textfield.dart';
+import 'package:lava/view/widget/custom_backIcon_widget.dart';
+import 'package:lava/view/widget/custom_chat_Bubble.dart';
+import 'package:lava/view/widget/custom_textfield.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({super.key});

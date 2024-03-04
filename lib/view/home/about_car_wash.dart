@@ -4,13 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lava/constatnt.dart';
 import 'package:lava/model/car_type.dart';
-import 'package:lava/model/car_wach_items.dart';
 
 import 'package:lava/view/widget/custom_text.dart';
 import 'package:lava/view/home/booking_page.dart';
 
-import 'package:lava/widgets/custom_textfield.dart';
-import 'package:lava/widgets/read_more_and_less_widget.dart';
+import 'package:lava/view/widget/custom_textfield.dart';
+import 'package:lava/view/widget/read_more_and_less_widget.dart';
 
 class AboutCarWashPage extends StatefulWidget {
   const AboutCarWashPage({super.key});
@@ -66,7 +65,7 @@ class _ActionBookingPageState extends State<AboutCarWashPage> {
                         'The car is cleaned effectively without the need to use extensive water or strong chemical products.'
                         'Dry car wash technology relies on the use of special high-quality products and innovative techniques to remove dirt and impurities from the surface of the car in a safe and effective way.'
                         'Instead of using water, special sprays are used that contain cleaning and polishing ingredients that loosen and lift dirt from the surface.'
-                        'What distinguishes dry car washes is its effectiveness in cleaning the car and leaving it clean and shiny, while protecting the car\'s paint and preserving its quality and original color.',
+                        'What distinguishes ${data.name}is its effectiveness in cleaning the car and leaving it clean and shiny, while protecting the car\'s paint and preserving its quality and original color.',
                   ),
                   SizedBox(
                     height: 15,

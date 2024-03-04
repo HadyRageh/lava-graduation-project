@@ -5,9 +5,9 @@ import 'package:get/get.dart';
 import 'package:lava/constatnt.dart';
 import 'package:lava/view/auth/signUp.dart';
 import 'package:lava/view/widget/custom_text.dart';
-import 'package:lava/widgets/custom_botton.dart';
-import 'package:lava/widgets/custom_Botton_social_medial.dart';
-import 'package:lava/widgets/custom_textfield.dart';
+import 'package:lava/view/widget/custom_botton.dart';
+import 'package:lava/view/widget/custom_Botton_social_medial.dart';
+import 'package:lava/view/widget/custom_textfield.dart';
 
 class SignInPage extends StatefulWidget {
   SignInPage({super.key});

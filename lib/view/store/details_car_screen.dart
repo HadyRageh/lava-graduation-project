@@ -3,9 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:lava/constatnt.dart';
 
-import 'package:lava/widgets/custom_botton.dart';
+import 'package:lava/view/widget/custom_botton.dart';
 
-import 'package:lava/widgets/read_more_and_less_widget.dart';
+import 'package:lava/view/widget/read_more_and_less_widget.dart';
 
 class DetailsCarScreen extends StatelessWidget {
   const DetailsCarScreen({super.key});

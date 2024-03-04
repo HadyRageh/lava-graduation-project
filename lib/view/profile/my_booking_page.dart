@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:lava/constatnt.dart';
-import 'package:lava/widgets/custom_backIcon_widget.dart';
+import 'package:lava/view/widget/custom_text.dart';
+import 'package:lava/view/widget/custom_backIcon_widget.dart';
 
 class MyBookingPage extends StatelessWidget {
   const MyBookingPage({super.key});
@@ -11,9 +12,10 @@ class MyBookingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'My Booking',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+        title: CustomText(
+          text: 'My Booking',
+          fontSize: 24,
+          fontWeight: FontWeight.w700,
         ),
         centerTitle: true,
         leading: BackIcon(),

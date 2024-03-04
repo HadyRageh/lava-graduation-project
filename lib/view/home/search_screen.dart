@@ -1,10 +1,10 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_null_comparison
 
 import 'package:flutter/material.dart';
 import 'package:lava/constatnt.dart';
 import 'package:lava/view/home/home_page.dart';
-import 'package:lava/widgets/custom_backIcon_widget.dart';
-import 'package:lava/widgets/search_texr_field.dart';
+import 'package:lava/view/widget/custom_backIcon_widget.dart';
+import 'package:lava/view/widget/search_texr_field.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:lava/constatnt.dart';
 import 'package:lava/view/home/home_page.dart';
 import 'package:lava/view/widget/custom_text.dart';
-import 'package:lava/widgets/custom_backIcon_widget.dart';
+import 'package:lava/view/widget/custom_backIcon_widget.dart';
 
 import 'package:lottie/lottie.dart';
 

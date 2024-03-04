@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:lava/constatnt.dart';
 import 'package:lava/view/auth/register_page.dart';
 import 'package:lava/view/widget/custom_text.dart';
-import 'package:lava/widgets/custom_botton.dart';
+import 'package:lava/view/widget/custom_botton.dart';
 import 'package:lava/view/widget/custom_get_started_pages.dart';
 
 class VerificationCodePage extends StatelessWidget {

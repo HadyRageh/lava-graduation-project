@@ -1,10 +1,10 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lava/constatnt.dart';
 import 'package:lava/view/auth/signIn_page.dart';
 import 'package:lava/view/widget/custom_get_started_pages.dart';
-import 'package:lava/widgets/custom_skip&back_button.dart';
 
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -95,6 +95,32 @@ class _AboutLavaPageState extends State<OnboardingPages> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class CustomSkipAndBackButtom extends StatelessWidget {
+  CustomSkipAndBackButtom({super.key, required this.onTap, required this.icon});
+  Function() onTap;
+  IconData icon;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 50,
+        width: 50,
+        decoration: BoxDecoration(
+          color: Color(0xffD8F0F4),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Center(
+            child: Icon(
+          icon,
+          color: kBlackColor,
+          size: 27,
+        )),
       ),
     );
   }

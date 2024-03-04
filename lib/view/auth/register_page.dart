@@ -5,9 +5,9 @@ import 'package:get/get.dart';
 import 'package:lava/constatnt.dart';
 import 'package:lava/view/widget/custom_text.dart';
 import 'package:lava/view/home/home_page.dart';
-import 'package:lava/widgets/custom_botton.dart';
-import 'package:lava/widgets/custom_Botton_social_medial.dart';
-import 'package:lava/widgets/custom_textfield.dart';
+import 'package:lava/view/widget/custom_botton.dart';
+import 'package:lava/view/widget/custom_Botton_social_medial.dart';
+import 'package:lava/view/widget/custom_textfield.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});

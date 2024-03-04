@@ -5,19 +5,18 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 import 'package:lava/constatnt.dart';
+import 'package:lava/view/store/store_page.dart';
 
 import 'package:lava/view/widget/custom_text.dart';
-import 'package:lava/views/car_wash.dart';
-import 'package:lava/views/chat_page.dart';
-import 'package:lava/views/empty_cart_page.dart';
+import 'package:lava/view/home/car_wash.dart';
+import 'package:lava/view/live_shat/chat_page.dart';
+import 'package:lava/view/store/empty_cart_page.dart';
 
-import 'package:lava/views/profile_page.dart';
-import 'package:lava/views/search_screen.dart';
-import 'package:lava/widgets/custom_accessories_card.dart';
-import 'package:lava/widgets/custom_car_card.dart';
-import 'package:lava/widgets/custom_nav_bar.dart';
-import 'package:lava/widgets/custom_row_in_Homepage.dart';
-import 'package:lava/widgets/search_texr_field.dart';
+import 'package:lava/view/profile/profile_page.dart';
+import 'package:lava/view/home/search_screen.dart';
+import 'package:lava/view/widget/custom_accessories_card.dart';
+import 'package:lava/view/widget/custom_car_card.dart';
+import 'package:lava/view/widget/search_texr_field.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -193,7 +192,9 @@ class Home extends StatelessWidget {
               ),
               CustomRowInHomePage(
                 titleName: 'Cars',
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(StorePage());
+                },
                 textButtonName: 'See More',
               ),
               SizedBox(
@@ -216,7 +217,9 @@ class Home extends StatelessWidget {
               CustomRowInHomePage(
                 titleName: 'Accessories',
                 textButtonName: 'See More',
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(StorePage());
+                },
               ),
               SizedBox(
                 height: 220,
@@ -285,6 +288,81 @@ class CustomServises extends StatelessWidget {
           ],
         ),
       ],
+    );
+  }
+}
+
+class CustomRowInHomePage extends StatelessWidget {
+  CustomRowInHomePage(
+      {super.key,
+      required this.titleName,
+      this.onPressed,
+      this.textButtonName});
+  String titleName;
+  String? textButtonName;
+
+  Function()? onPressed;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          titleName,
+          style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+        TextButton(
+            onPressed: onPressed,
+            child: Text(
+              textButtonName ?? '',
+              style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: kPrimaryColor),
+            ))
+      ],
+    );
+  }
+}
+
+class CustomNavBar extends StatelessWidget {
+  CustomNavBar({
+    super.key,
+    required this.image,
+    required this.labelName,
+    this.onTap,
+  });
+  String image;
+
+  String labelName;
+  Function()? onTap;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        children: [
+          Expanded(
+            child: Image.asset(
+              image,
+              width: 30,
+              height: 30,
+            ),
+          ),
+          SizedBox(
+            height: 1,
+          ),
+          Expanded(
+            child: Text(
+              labelName,
+              style: TextStyle(color: kPrimaryColor, fontSize: 13),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

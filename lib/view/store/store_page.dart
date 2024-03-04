@@ -3,12 +3,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:lava/constatnt.dart';
-import 'package:lava/views/details_accessories_screen.dart';
-import 'package:lava/views/details_car_screen.dart';
-import 'package:lava/widgets/custom_accessories_card.dart';
+import 'package:lava/view/store/details_accessories_screen.dart';
+import 'package:lava/view/store/details_car_screen.dart';
+import 'package:lava/view/widget/custom_accessories_card.dart';
 
-import 'package:lava/widgets/custom_car_card.dart';
-import 'package:lava/widgets/search_texr_field.dart';
+import 'package:lava/view/widget/custom_car_card.dart';
+import 'package:lava/view/widget/search_texr_field.dart';
 
 class StorePage extends StatefulWidget {
   const StorePage({Key? key}) : super(key: key);

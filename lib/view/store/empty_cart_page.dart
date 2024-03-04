@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:lava/widgets/custom_backIcon_widget.dart';
+import 'package:lava/view/widget/custom_backIcon_widget.dart';
 
 class EmptyCartPage extends StatelessWidget {
   const EmptyCartPage({super.key});

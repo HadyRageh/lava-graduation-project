@@ -5,20 +5,20 @@ import 'package:get/get.dart';
 import 'package:lava/constatnt.dart';
 import 'package:lava/helper/binding.dart';
 import 'package:lava/view/auth/signIn_page.dart';
-import 'package:lava/views/car_wash.dart';
-import 'package:lava/views/chat_page.dart';
-import 'package:lava/views/empty_cart_page.dart';
+import 'package:lava/view/home/car_wash.dart';
+import 'package:lava/view/live_shat/chat_page.dart';
+import 'package:lava/view/store/empty_cart_page.dart';
 import 'package:lava/view/home/home_page.dart';
 import 'package:lava/view/onboarding/get_started_page.dart';
-import 'package:lava/views/older_page.dart';
+
 import 'package:lava/view/home/payment_datails_page.dart';
-import 'package:lava/views/profile_page.dart';
+import 'package:lava/view/profile/profile_page.dart';
 import 'package:lava/view/home/booking_page.dart';
 import 'package:lava/view/auth/register_page.dart';
-import 'package:lava/views/search_screen.dart';
-import 'package:lava/views/store_page.dart';
-import 'package:lava/views/successful_order_page.dart';
-import 'package:lava/views/tracking_order_page.dart';
+import 'package:lava/view/home/search_screen.dart';
+import 'package:lava/view/store/store_page.dart';
+import 'package:lava/view/store/successful_order_page.dart';
+import 'package:lava/view/store/tracking_order_page.dart';
 import 'package:lava/view/auth/verivication_code_page.dart';
 
 void main() {
